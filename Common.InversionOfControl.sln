@@ -25,7 +25,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.InversionOfControl.C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuget", "nuget", "{38911ECC-3C89-4652-A7E2-C72510D5C19C}"
 	ProjectSection(SolutionItems) = preProject
-		Common.InversionOfControl.Unity.nuspec = Common.InversionOfControl.Unity.nuspec
+		nuget\Common.IOC.Autofac.nuspec = nuget\Common.IOC.Autofac.nuspec
+		nuget\Common.IOC.CastleWindsor.nuspec = nuget\Common.IOC.CastleWindsor.nuspec
+		nuget\Common.IOC.NInject.nuspec = nuget\Common.IOC.NInject.nuspec
+		nuget\Common.IOC.nuspec = nuget\Common.IOC.nuspec
+		nuget\Common.IOC.Unity.nuspec = nuget\Common.IOC.Unity.nuspec
 	EndProjectSection
 EndProject
 Global

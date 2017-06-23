@@ -163,18 +163,24 @@ namespace Common.InversionOfControl.CastleWindsor
         }
 
         public T Resolve<T>() where T : class
-        {            
+        {
             return _container.Resolve<T>();
         }
 
         public IContainerBuilder RegisterInstance(Type t, object instance)
         {
-         _container.
+            throw  new NotImplementedException();
         }
 
+        public IContainerBuilder RegisterInstance<TInterface>(TInterface instance) where TInterface : class
+        {
+            _container.Register(Component.For<TInterface>().Instance(instance));
+            return this;
+        }
         public IContainerBuilder Register(Type t1, Type t2)
         {
-            throw new NotImplementedException();
+            _container.Register(Component.For(t1, t2));
+            return this;
         }
     }
 }

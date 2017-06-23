@@ -25,7 +25,7 @@ namespace Common.InversionOfControl
 
         T Resolve<T>() where T : class;
 
-        IContainerBuilder RegisterInstance(Type t, object instance);
+        IContainerBuilder RegisterInstance<TInterface>(TInterface instance) where TInterface : class;
 
         IContainerBuilder Register(Type t1, Type t2);
     }

@@ -80,9 +80,9 @@ namespace Common.InversionOfControl.Unity3
             return this;
         }
 
-        public IContainerBuilder RegisterInstance(Type t, object instance)
+        public IContainerBuilder RegisterInstance<TInterface>(TInterface instance) where TInterface : class
         {
-            _container.RegisterInstance(t, instance);
+            _container.RegisterInstance(typeof(TInterface), instance);
             return this;
         }
 
