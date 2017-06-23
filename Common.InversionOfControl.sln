@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.InversionOfControl", "Common.InversionOfControl\Common.InversionOfControl.csproj", "{CDB5C84E-ECAE-4FB1-BE53-0DEE6A992B8F}"
 EndProject
@@ -22,6 +22,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.InversionOfControl.CastleWindsor", "Common.InversionOfControl.CastleWindsor\Common.InversionOfControl.CastleWindsor.csproj", "{EB1C6DC5-9E87-425B-93F4-A4088BDF82D7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.InversionOfControl.CastleWindsor.Tests", "Common.InversionOfControl.CastleWindsor.Tests\Common.InversionOfControl.CastleWindsor.Tests.csproj", "{C1E1F24C-21F5-410B-B4E0-11BFCE8235D1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuget", "nuget", "{38911ECC-3C89-4652-A7E2-C72510D5C19C}"
+	ProjectSection(SolutionItems) = preProject
+		Common.InversionOfControl.Unity.nuspec = Common.InversionOfControl.Unity.nuspec
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
