@@ -17,6 +17,11 @@ namespace Common.InversionOfControl.Ninject
             return new NinjectReadOnlyContainer(_kernel);
         }
 
+        public IKernel GetNInjectCKernel()
+        {
+            return _kernel;
+        }
+
         public IContainerBuilder RegisterSingleton<T>(T instance) where T : class
         {
             _kernel.Bind<T>().ToConstant(instance);
@@ -117,19 +122,19 @@ namespace Common.InversionOfControl.Ninject
             return this;
         }
 
-        public IContainerBuilder Register<T>(Func<IContainer, T> factory) where T : class
+        public IContainerBuilder Register<T>(Func<IContainerIOC, T> factory) where T : class
         {
             _kernel.Bind<T>().ToMethod<T>(context => factory(new NinjectReadOnlyContainer(context.Kernel))).InTransientScope();
             return this;
         }
 
-        public IContainerBuilder Register<T>(Func<IContainer, T> factory, string name) where T : class
+        public IContainerBuilder Register<T>(Func<IContainerIOC, T> factory, string name) where T : class
         {
             _kernel.Bind<T>().ToMethod<T>(context => factory(new NinjectReadOnlyContainer(context.Kernel))).InTransientScope().Named(name);
             return this;
         }
 
-        public IContainerBuilder Register<T>(Func<IContainer, T> factory, Scope scope) where T : class
+        public IContainerBuilder Register<T>(Func<IContainerIOC, T> factory, Scope scope) where T : class
         {
             switch (scope)
             {
@@ -145,7 +150,7 @@ namespace Common.InversionOfControl.Ninject
             return this;
         }
 
-        public IContainerBuilder Register<T>(Func<IContainer, T> factory, string name, Scope scope) where T : class
+        public IContainerBuilder Register<T>(Func<IContainerIOC, T> factory, string name, Scope scope) where T : class
         {
             switch (scope)
             {

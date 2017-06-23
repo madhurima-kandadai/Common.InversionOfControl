@@ -2,7 +2,7 @@
 
 namespace Common.InversionOfControl
 {
-    public interface IDisposableContainer : IContainer, IDisposable
+    public interface IDisposableContainer : IContainerIOC, IDisposable
     {
     }
 }

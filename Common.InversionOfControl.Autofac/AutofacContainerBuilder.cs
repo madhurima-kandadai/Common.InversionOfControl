@@ -17,6 +17,11 @@ namespace Common.InversionOfControl.Autofac
             return new AutofacReadOnlyContainer(_containerBuilder.Build());
         }
 
+        public IContainer BuildContainer()
+        {
+            return _containerBuilder.Build();
+        }
+
         public IContainerBuilder RegisterSingleton<T>(T instance) where T : class
         {
             _containerBuilder.RegisterInstance(instance).SingleInstance();
@@ -117,19 +122,19 @@ namespace Common.InversionOfControl.Autofac
             return this;
         }
 
-        public IContainerBuilder Register<T>(Func<IContainer, T> factory) where T : class
+        public IContainerBuilder Register<T>(Func<IContainerIOC, T> factory) where T : class
         {
             _containerBuilder.Register(context => factory(new AutofacReadOnlyContainer(context))).InstancePerDependency();
             return this;
         }
 
-        public IContainerBuilder Register<T>(Func<IContainer, T> factory, string name) where T : class
+        public IContainerBuilder Register<T>(Func<IContainerIOC, T> factory, string name) where T : class
         {
             _containerBuilder.Register(context => factory(new AutofacReadOnlyContainer(context))).InstancePerDependency().Named<T>(name);
             return this;
         }
 
-        public IContainerBuilder Register<T>(Func<IContainer, T> factory, Scope scope) where T : class
+        public IContainerBuilder Register<T>(Func<IContainerIOC, T> factory, Scope scope) where T : class
         {
             switch (scope)
             {
@@ -145,7 +150,7 @@ namespace Common.InversionOfControl.Autofac
             return this;
         }
 
-        public IContainerBuilder Register<T>(Func<IContainer, T> factory, string name, Scope scope) where T : class
+        public IContainerBuilder Register<T>(Func<IContainerIOC, T> factory, string name, Scope scope) where T : class
         {
             switch (scope)
             {

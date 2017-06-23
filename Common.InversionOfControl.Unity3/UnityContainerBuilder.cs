@@ -136,19 +136,19 @@ namespace Common.InversionOfControl.Unity3
             return this;
         }
 
-        public IContainerBuilder Register<T>(Func<IContainer, T> factory) where T : class
+        public IContainerBuilder Register<T>(Func<IContainerIOC, T> factory) where T : class
         {
             _container.RegisterType<T>(new TransientLifetimeManager(), new InjectionFactory(container => factory(new UnityReadOnlyContainer(container))));
             return this;
         }
 
-        public IContainerBuilder Register<T>(Func<IContainer, T> factory, string name) where T : class
+        public IContainerBuilder Register<T>(Func<IContainerIOC, T> factory, string name) where T : class
         {
             _container.RegisterType<T>(name, new TransientLifetimeManager(), new InjectionFactory(container => factory(new UnityReadOnlyContainer(container))));
             return this;
         }
 
-        public IContainerBuilder Register<T>(Func<IContainer, T> factory, Scope scope) where T : class
+        public IContainerBuilder Register<T>(Func<IContainerIOC, T> factory, Scope scope) where T : class
         {
             switch (scope)
             {
@@ -164,7 +164,7 @@ namespace Common.InversionOfControl.Unity3
             return this;
         }
 
-        public IContainerBuilder Register<T>(Func<IContainer, T> factory, string name, Scope scope) where T : class
+        public IContainerBuilder Register<T>(Func<IContainerIOC, T> factory, string name, Scope scope) where T : class
         {
             switch (scope)
             {

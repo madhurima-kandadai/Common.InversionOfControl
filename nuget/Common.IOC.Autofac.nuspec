@@ -10,11 +10,11 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <copyright>Copyright 2016</copyright>
     <dependencies>
-      <dependency id="Unity" version="4.0.1" />
+      <dependency id="Autofac" version="4.0.1" />
       <dependency id="Common.IOC" version="1.0" />
     </dependencies>
   </metadata>
   <files>
-    <file src="Common.InversionOfControl.Autofac\bin\Debug\*.dll" target="lib"/>
+    <file src="..\Common.InversionOfControl.Autofac\bin\Debug\*.dll" target="lib"/>
   </files>
 </package>

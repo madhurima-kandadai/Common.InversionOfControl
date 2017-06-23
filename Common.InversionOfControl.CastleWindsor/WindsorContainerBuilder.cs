@@ -18,6 +18,11 @@ namespace Common.InversionOfControl.CastleWindsor
             return new WindsorReadOnlyContainer(_container.Kernel);
         }
 
+        public IWindsorContainer GetWindsorContainer()
+        {
+            return _container;
+        }
+
         public IContainerBuilder RegisterSingleton<T>(T instance) where T : class
         {
             _container.Register(Component.For<T>().Instance(instance).LifestyleSingleton());
@@ -118,19 +123,19 @@ namespace Common.InversionOfControl.CastleWindsor
             return this;
         }
 
-        public IContainerBuilder Register<T>(Func<IContainer, T> factory) where T : class
+        public IContainerBuilder Register<T>(Func<IContainerIOC, T> factory) where T : class
         {
             _container.Register(Component.For<T>().UsingFactoryMethod<T>(x => factory(new WindsorReadOnlyContainer(x))).LifestyleTransient().AddNamedConstructorInjectionSupport<T, T>());
             return this;
         }
 
-        public IContainerBuilder Register<T>(Func<IContainer, T> factory, string name) where T : class
+        public IContainerBuilder Register<T>(Func<IContainerIOC, T> factory, string name) where T : class
         {
             _container.Register(Component.For<T>().UsingFactoryMethod<T>(x => factory(new WindsorReadOnlyContainer(x))).LifestyleTransient().Named(name).AddNamedConstructorInjectionSupport<T, T>());
             return this;
         }
 
-        public IContainerBuilder Register<T>(Func<IContainer, T> factory, Scope scope) where T : class
+        public IContainerBuilder Register<T>(Func<IContainerIOC, T> factory, Scope scope) where T : class
         {
             switch (scope)
             {
@@ -146,7 +151,7 @@ namespace Common.InversionOfControl.CastleWindsor
             return this;
         }
 
-        public IContainerBuilder Register<T>(Func<IContainer, T> factory, string name, Scope scope) where T : class
+        public IContainerBuilder Register<T>(Func<IContainerIOC, T> factory, string name, Scope scope) where T : class
         {
             switch (scope)
             {

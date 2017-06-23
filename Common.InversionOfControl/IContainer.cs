@@ -1,6 +1,6 @@
 ﻿namespace Common.InversionOfControl
 {
-    public interface IContainer
+    public interface IContainerIOC
     {
         bool IsRegistered<T>();
         bool IsRegistered<T>(string name);
