@@ -22,6 +22,12 @@ namespace Common.InversionOfControl
         IContainerBuilder Register<T>(Func<IContainer, T> factory, string name) where T : class;
         IContainerBuilder Register<T>(Func<IContainer, T> factory, Scope scope) where T : class;
         IContainerBuilder Register<T>(Func<IContainer, T> factory, string name, Scope scope) where T : class;
+
+        T Resolve<T>() where T : class;
+
+        IContainerBuilder RegisterInstance(Type t, object instance);
+
+        IContainerBuilder Register(Type t1, Type t2);
     }
 
     public enum Scope

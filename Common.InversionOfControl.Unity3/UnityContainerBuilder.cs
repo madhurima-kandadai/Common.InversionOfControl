@@ -31,6 +31,11 @@ namespace Common.InversionOfControl.Unity3
             return this;
         }
 
+        public IUnityContainer GetUnityContainer()
+        {
+            return _container;
+        }
+
         public IContainerBuilder Register<T>() where T : class
         {
             _container.RegisterType<T>(new TransientLifetimeManager());
@@ -75,9 +80,21 @@ namespace Common.InversionOfControl.Unity3
             return this;
         }
 
+        public IContainerBuilder RegisterInstance(Type t, object instance)
+        {
+            _container.RegisterInstance(t, instance);
+            return this;
+        }
+
         public IContainerBuilder Register<TInterface, TImplementation>() where TInterface : class where TImplementation : class, TInterface
         {
             _container.RegisterType<TInterface, TImplementation>(new TransientLifetimeManager());
+            return this;
+        }
+
+        public IContainerBuilder Register(Type t1, Type t2)
+        {
+            _container.RegisterType(t1, t2);
             return this;
         }
 
@@ -161,6 +178,11 @@ namespace Common.InversionOfControl.Unity3
                     throw new ArgumentOutOfRangeException("scope");
             }
             return this;
+        }
+
+        public T Resolve<T>() where T : class
+        {
+            return _container.Resolve<T>();
         }
     }
 

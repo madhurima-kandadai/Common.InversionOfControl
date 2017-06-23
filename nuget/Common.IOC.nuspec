@@ -1,18 +1,19 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>Common.IOC.Unity</id>
+    <id>Common.IOC</id>
     <version>1.0</version>
-    <title>Common.IOC.Unity</title>
+    <title>Common.IOC</title>
     <authors>Anonymous</authors>
     <owners>Epam Systems India</owners>
-    <description>Common.IOC.Unity</description>
+    <description>Common.IOC</description>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <copyright>Copyright 2016</copyright>
-    <dependencies>     
+    <dependencies>
+      <dependency id="Unity" version="4.0.1" />
     </dependencies>
   </metadata>
   <files>
-    <file src="Common.InversionOfControl.Unity3\bin\Debug\*.dll" target="lib"/>
+    <file src="Common.InversionOfControl\bin\Debug\*.dll" target="lib"/>
   </files>
 </package>
