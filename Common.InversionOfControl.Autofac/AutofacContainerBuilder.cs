@@ -160,5 +160,22 @@ namespace Common.InversionOfControl.Autofac
             }
             return this;
         }
+
+        public T Resolve<T>() where T : class
+        {
+            return _containerBuilder.Build().BeginLifetimeScope().Resolve<T>();
+        }
+
+        public IContainerBuilder RegisterInstance<TInterface>(TInterface instance) where TInterface : class
+        {
+            _containerBuilder.RegisterInstance<TInterface>(instance);
+            return this;
+        }
+
+        public IContainerBuilder RegisterGeneric(Type t1, Type t2)
+        {
+            _containerBuilder.RegisterGeneric(t1).As(t2);
+            return this;            
+        }
     }
 }

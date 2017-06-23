@@ -160,5 +160,21 @@ namespace Common.InversionOfControl.Ninject
             }
             return this;
         }
+
+        public T Resolve<T>() where T : class
+        {
+            return _kernel.Get<T>();
+        }
+
+        public IContainerBuilder RegisterInstance<TInterface>(TInterface instance) where TInterface : class
+        {
+            throw new NotImplementedException();
+        }
+
+        public IContainerBuilder RegisterGeneric(Type t1, Type t2)
+        {
+            _kernel.Bind(t1).To(t2);
+            return this;
+        }
     }
 }

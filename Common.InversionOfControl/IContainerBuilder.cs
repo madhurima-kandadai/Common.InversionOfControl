@@ -27,7 +27,7 @@ namespace Common.InversionOfControl
 
         IContainerBuilder RegisterInstance<TInterface>(TInterface instance) where TInterface : class;
 
-        IContainerBuilder Register(Type t1, Type t2);
+        IContainerBuilder RegisterGeneric(Type t1, Type t2);
     }
 
     public enum Scope

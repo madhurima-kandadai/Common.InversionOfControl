@@ -177,7 +177,7 @@ namespace Common.InversionOfControl.CastleWindsor
             _container.Register(Component.For<TInterface>().Instance(instance));
             return this;
         }
-        public IContainerBuilder Register(Type t1, Type t2)
+        public IContainerBuilder RegisterGeneric(Type t1, Type t2)
         {
             _container.Register(Component.For(t1, t2));
             return this;

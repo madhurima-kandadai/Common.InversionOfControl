@@ -92,7 +92,7 @@ namespace Common.InversionOfControl.Unity3
             return this;
         }
 
-        public IContainerBuilder Register(Type t1, Type t2)
+        public IContainerBuilder RegisterGeneric(Type t1, Type t2)
         {
             _container.RegisterType(t1, t2);
             return this;
