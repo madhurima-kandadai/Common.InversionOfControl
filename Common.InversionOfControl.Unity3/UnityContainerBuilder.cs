@@ -11,7 +11,6 @@ namespace Common.InversionOfControl.Unity3
         public UnityContainerBuilder()
         {
             _container = new UnityContainer();
-            _container.AddExtension(new MyExtension());
         }
 
         public IDisposableContainer Build()
@@ -183,14 +182,6 @@ namespace Common.InversionOfControl.Unity3
         public T Resolve<T>() where T : class
         {
             return _container.Resolve<T>();
-        }
-    }
-
-    public class MyExtension : UnityContainerExtension
-    {
-        protected override void Initialize()
-        {
-            Context.Strategies.Add(new MyStrategy(), UnityBuildStage.TypeMapping);
         }
     }
 }

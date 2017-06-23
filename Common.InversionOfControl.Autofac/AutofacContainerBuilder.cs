@@ -36,13 +36,13 @@ namespace Common.InversionOfControl.Autofac
 
         public IContainerBuilder Register<T>() where T : class
         {
-            _containerBuilder.RegisterType<T>().InstancePerDependency().AddNamedConstructorInjectionSupport();
+            _containerBuilder.RegisterType<T>().InstancePerDependency();
             return this;
         }
 
         public IContainerBuilder Register<T>(string name) where T : class
         {
-            _containerBuilder.RegisterType<T>().Named<T>(name).InstancePerDependency().AddNamedConstructorInjectionSupport();
+            _containerBuilder.RegisterType<T>().Named<T>(name).InstancePerDependency();
             return this;
         }
 
@@ -51,10 +51,10 @@ namespace Common.InversionOfControl.Autofac
             switch (scope)
             {
                 case Scope.Singleton:
-                    _containerBuilder.RegisterType<T>().SingleInstance().AddNamedConstructorInjectionSupport();
+                    _containerBuilder.RegisterType<T>().SingleInstance();
                     break;
                 case Scope.Transient:
-                    _containerBuilder.RegisterType<T>().InstancePerDependency().AddNamedConstructorInjectionSupport();
+                    _containerBuilder.RegisterType<T>().InstancePerDependency();
                     break;
                 default:
                     throw new ArgumentOutOfRangeException("scope");
@@ -67,10 +67,10 @@ namespace Common.InversionOfControl.Autofac
             switch (scope)
             {
                 case Scope.Singleton:
-                    _containerBuilder.RegisterType<T>().Named<T>(name).SingleInstance().AddNamedConstructorInjectionSupport();
+                    _containerBuilder.RegisterType<T>().Named<T>(name).SingleInstance();
                     break;
                 case Scope.Transient:
-                    _containerBuilder.RegisterType<T>().Named<T>(name).InstancePerDependency().AddNamedConstructorInjectionSupport();
+                    _containerBuilder.RegisterType<T>().Named<T>(name).InstancePerDependency();
                     break;
                 default:
                     throw new ArgumentOutOfRangeException("scope");
@@ -80,13 +80,13 @@ namespace Common.InversionOfControl.Autofac
 
         public IContainerBuilder Register<TInterface, TImplementation>() where TInterface : class where TImplementation : class, TInterface
         {
-            _containerBuilder.RegisterType<TImplementation>().As<TInterface>().AddNamedConstructorInjectionSupport();
+            _containerBuilder.RegisterType<TImplementation>().As<TInterface>();
             return this;
         }
 
         public IContainerBuilder Register<TInterface, TImplementation>(string name) where TInterface : class where TImplementation : class, TInterface
         {
-            _containerBuilder.RegisterType<TImplementation>().As<TInterface>().Named<TInterface>(name).AddNamedConstructorInjectionSupport();
+            _containerBuilder.RegisterType<TImplementation>().As<TInterface>().Named<TInterface>(name);
             return this;
         }
 
@@ -95,10 +95,10 @@ namespace Common.InversionOfControl.Autofac
             switch (scope)
             {
                 case Scope.Singleton:
-                    _containerBuilder.RegisterType<TImplementation>().As<TInterface>().SingleInstance().AddNamedConstructorInjectionSupport();
+                    _containerBuilder.RegisterType<TImplementation>().As<TInterface>().SingleInstance();
                     break;
                 case Scope.Transient:
-                    _containerBuilder.RegisterType<TImplementation>().As<TInterface>().InstancePerDependency().AddNamedConstructorInjectionSupport();
+                    _containerBuilder.RegisterType<TImplementation>().As<TInterface>().InstancePerDependency();
                     break;
                 default:
                     throw new ArgumentOutOfRangeException("scope");
@@ -111,10 +111,10 @@ namespace Common.InversionOfControl.Autofac
             switch (scope)
             {
                 case Scope.Singleton:
-                    _containerBuilder.RegisterType<TImplementation>().As<TInterface>().SingleInstance().Named<TInterface>(name).AddNamedConstructorInjectionSupport();
+                    _containerBuilder.RegisterType<TImplementation>().As<TInterface>().SingleInstance().Named<TInterface>(name);
                     break;
                 case Scope.Transient:
-                    _containerBuilder.RegisterType<TImplementation>().As<TInterface>().InstancePerDependency().Named<TInterface>(name).AddNamedConstructorInjectionSupport();
+                    _containerBuilder.RegisterType<TImplementation>().As<TInterface>().InstancePerDependency().Named<TInterface>(name);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException("scope");

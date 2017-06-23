@@ -37,13 +37,13 @@ namespace Common.InversionOfControl.CastleWindsor
 
         public IContainerBuilder Register<T>() where T : class
         {
-            _container.Register(Component.For<T>().ImplementedBy<T>().LifestyleTransient().AddNamedConstructorInjectionSupport<T, T>());
+            _container.Register(Component.For<T>().ImplementedBy<T>().LifestyleTransient());
             return this;
         }
 
         public IContainerBuilder Register<T>(string name) where T : class
         {
-            _container.Register(Component.For<T>().ImplementedBy<T>().LifestyleTransient().Named(name).AddNamedConstructorInjectionSupport<T, T>());
+            _container.Register(Component.For<T>().ImplementedBy<T>().LifestyleTransient().Named(name));
             return this;
         }
 
@@ -52,10 +52,10 @@ namespace Common.InversionOfControl.CastleWindsor
             switch (scope)
             {
                 case Scope.Singleton:
-                    _container.Register(Component.For<T>().ImplementedBy<T>().LifestyleSingleton().AddNamedConstructorInjectionSupport<T, T>());
+                    _container.Register(Component.For<T>().ImplementedBy<T>().LifestyleSingleton());
                     break;
                 case Scope.Transient:
-                    _container.Register(Component.For<T>().ImplementedBy<T>().LifestyleTransient().AddNamedConstructorInjectionSupport<T, T>());
+                    _container.Register(Component.For<T>().ImplementedBy<T>().LifestyleTransient());
                     break;
                 default:
                     throw new ArgumentOutOfRangeException("scope");
@@ -68,10 +68,10 @@ namespace Common.InversionOfControl.CastleWindsor
             switch (scope)
             {
                 case Scope.Singleton:
-                    _container.Register(Component.For<T>().ImplementedBy<T>().LifestyleSingleton().Named(name).AddNamedConstructorInjectionSupport<T, T>());
+                    _container.Register(Component.For<T>().ImplementedBy<T>().LifestyleSingleton().Named(name));
                     break;
                 case Scope.Transient:
-                    _container.Register(Component.For<T>().ImplementedBy<T>().LifestyleTransient().Named(name).AddNamedConstructorInjectionSupport<T, T>());
+                    _container.Register(Component.For<T>().ImplementedBy<T>().LifestyleTransient().Named(name));
                     break;
                 default:
                     throw new ArgumentOutOfRangeException("scope");
@@ -81,13 +81,13 @@ namespace Common.InversionOfControl.CastleWindsor
 
         public IContainerBuilder Register<TInterface, TImplementation>() where TInterface : class where TImplementation : class, TInterface
         {
-            _container.Register(Component.For<TInterface>().ImplementedBy<TImplementation>().LifestyleTransient().AddNamedConstructorInjectionSupport<TInterface, TImplementation>());
+            _container.Register(Component.For<TInterface>().ImplementedBy<TImplementation>().LifestyleTransient());
             return this;
         }
 
         public IContainerBuilder Register<TInterface, TImplementation>(string name) where TInterface : class where TImplementation : class, TInterface
         {
-            _container.Register(Component.For<TInterface>().ImplementedBy<TImplementation>().LifestyleTransient().Named(name).AddNamedConstructorInjectionSupport<TInterface, TImplementation>());
+            _container.Register(Component.For<TInterface>().ImplementedBy<TImplementation>().LifestyleTransient().Named(name));
             return this;
         }
 
@@ -96,10 +96,10 @@ namespace Common.InversionOfControl.CastleWindsor
             switch (scope)
             {
                 case Scope.Singleton:
-                    _container.Register(Component.For<TInterface>().ImplementedBy<TImplementation>().LifestyleSingleton().AddNamedConstructorInjectionSupport<TInterface, TImplementation>());
+                    _container.Register(Component.For<TInterface>().ImplementedBy<TImplementation>().LifestyleSingleton());
                     break;
                 case Scope.Transient:
-                    _container.Register(Component.For<TInterface>().ImplementedBy<TImplementation>().LifestyleTransient().AddNamedConstructorInjectionSupport<TInterface, TImplementation>());
+                    _container.Register(Component.For<TInterface>().ImplementedBy<TImplementation>().LifestyleTransient());
                     break;
                 default:
                     throw new ArgumentOutOfRangeException("scope");
@@ -112,10 +112,10 @@ namespace Common.InversionOfControl.CastleWindsor
             switch (scope)
             {
                 case Scope.Singleton:
-                    _container.Register(Component.For<TInterface>().ImplementedBy<TImplementation>().LifestyleSingleton().Named(name).AddNamedConstructorInjectionSupport<TInterface, TImplementation>());
+                    _container.Register(Component.For<TInterface>().ImplementedBy<TImplementation>().LifestyleSingleton().Named(name));
                     break;
                 case Scope.Transient:
-                    _container.Register(Component.For<TInterface>().ImplementedBy<TImplementation>().LifestyleTransient().Named(name).AddNamedConstructorInjectionSupport<TInterface, TImplementation>());
+                    _container.Register(Component.For<TInterface>().ImplementedBy<TImplementation>().LifestyleTransient().Named(name));
                     break;
                 default:
                     throw new ArgumentOutOfRangeException("scope");
@@ -125,13 +125,13 @@ namespace Common.InversionOfControl.CastleWindsor
 
         public IContainerBuilder Register<T>(Func<IContainerIOC, T> factory) where T : class
         {
-            _container.Register(Component.For<T>().UsingFactoryMethod<T>(x => factory(new WindsorReadOnlyContainer(x))).LifestyleTransient().AddNamedConstructorInjectionSupport<T, T>());
+            _container.Register(Component.For<T>().UsingFactoryMethod<T>(x => factory(new WindsorReadOnlyContainer(x))).LifestyleTransient());
             return this;
         }
 
         public IContainerBuilder Register<T>(Func<IContainerIOC, T> factory, string name) where T : class
         {
-            _container.Register(Component.For<T>().UsingFactoryMethod<T>(x => factory(new WindsorReadOnlyContainer(x))).LifestyleTransient().Named(name).AddNamedConstructorInjectionSupport<T, T>());
+            _container.Register(Component.For<T>().UsingFactoryMethod<T>(x => factory(new WindsorReadOnlyContainer(x))).LifestyleTransient().Named(name));
             return this;
         }
 
@@ -140,10 +140,10 @@ namespace Common.InversionOfControl.CastleWindsor
             switch (scope)
             {
                 case Scope.Singleton:
-                    _container.Register(Component.For<T>().UsingFactoryMethod<T>(x => factory(new WindsorReadOnlyContainer(x))).LifestyleSingleton().AddNamedConstructorInjectionSupport<T, T>());
+                    _container.Register(Component.For<T>().UsingFactoryMethod<T>(x => factory(new WindsorReadOnlyContainer(x))).LifestyleSingleton());
                     break;
                 case Scope.Transient:
-                    _container.Register(Component.For<T>().UsingFactoryMethod<T>(x => factory(new WindsorReadOnlyContainer(x))).LifestyleTransient().AddNamedConstructorInjectionSupport<T, T>());
+                    _container.Register(Component.For<T>().UsingFactoryMethod<T>(x => factory(new WindsorReadOnlyContainer(x))).LifestyleTransient());
                     break;
                 default:
                     throw new ArgumentOutOfRangeException("scope");
@@ -156,10 +156,10 @@ namespace Common.InversionOfControl.CastleWindsor
             switch (scope)
             {
                 case Scope.Singleton:
-                    _container.Register(Component.For<T>().UsingFactoryMethod<T>(x => factory(new WindsorReadOnlyContainer(x))).LifestyleSingleton().Named(name).AddNamedConstructorInjectionSupport<T, T>());
+                    _container.Register(Component.For<T>().UsingFactoryMethod<T>(x => factory(new WindsorReadOnlyContainer(x))).LifestyleSingleton().Named(name));
                     break;
                 case Scope.Transient:
-                    _container.Register(Component.For<T>().UsingFactoryMethod<T>(x => factory(new WindsorReadOnlyContainer(x))).LifestyleTransient().Named(name).AddNamedConstructorInjectionSupport<T, T>());
+                    _container.Register(Component.For<T>().UsingFactoryMethod<T>(x => factory(new WindsorReadOnlyContainer(x))).LifestyleTransient().Named(name));
                     break;
                 default:
                     throw new ArgumentOutOfRangeException("scope");

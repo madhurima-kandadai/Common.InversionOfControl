@@ -49,10 +49,6 @@
       <Project>{679E3926-E033-43A8-9F91-F1C84CE934C6}</Project>
       <Name>Common.InversionOfControl.Ninject</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Common.InversionOfControl.Tests\Common.InversionOfControl.Tests.csproj">
-      <Project>{B266A0B3-C713-49D5-896E-D3695CF55AF5}</Project>
-      <Name>Common.InversionOfControl.Tests</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Common.InversionOfControl\Common.InversionOfControl.csproj">
       <Project>{CDB5C84E-ECAE-4FB1-BE53-0DEE6A992B8F}</Project>
       <Name>Common.InversionOfControl</Name>

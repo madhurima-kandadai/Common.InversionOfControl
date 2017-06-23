@@ -9,7 +9,7 @@ namespace Common.InversionOfControl.Ninject
 
         public NinjectContainerBuilder()
         {
-            _kernel = new ExtendedKernel();
+            _kernel = new StandardKernel();
         }
 
         public IDisposableContainer Build()
