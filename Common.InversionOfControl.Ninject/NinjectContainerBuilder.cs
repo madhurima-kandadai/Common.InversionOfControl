@@ -173,7 +173,8 @@ namespace Common.InversionOfControl.Ninject
 
         public IContainerBuilder RegisterInstance<TInterface>(TInterface instance) where TInterface : class
         {
-            throw new NotImplementedException();
+            _kernel.Bind<TInterface>().ToConstant(instance);
+            return this;
         }
 
         public IContainerBuilder RegisterGeneric(Type t1, Type t2)
