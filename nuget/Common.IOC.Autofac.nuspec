@@ -9,12 +9,11 @@
     <description>Common.IOC.Autofac</description>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <copyright>Copyright 2016</copyright>
-    <dependencies>
-      <dependency id="Autofac" version="4.0.1" />
+    <dependencies>      
       <dependency id="Common.IOC" version="1.0" />
     </dependencies>
   </metadata>
   <files>
-    <file src="..\Common.InversionOfControl.Autofac\bin\Debug\*.dll" target="lib\net452"/>
+    <file src="..\Common.InversionOfControl.Autofac\bin\Debug\Common.InversionOfControl.Autofac.dll" target="lib\net452"/>
   </files>
 </package>
