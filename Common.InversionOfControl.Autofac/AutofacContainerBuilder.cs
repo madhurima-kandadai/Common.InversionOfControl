@@ -14,7 +14,7 @@ namespace Common.InversionOfControl.Autofac
             _containerBuilder = new ContainerBuilder();
         }
 
-        public ContainerBuilder GetAutofaContainerBuilder()
+        public ContainerBuilder GetAutofacContainerBuilder()
         {
             return _containerBuilder;
         }

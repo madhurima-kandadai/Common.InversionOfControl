@@ -17,7 +17,7 @@ namespace Common.InversionOfControl.Ninject
             return new NinjectReadOnlyContainer(_kernel);
         }
 
-        public IKernel GetNInjectCKernel()
+        public IKernel GetNInjectContainer()
         {
             return _kernel;
         }
