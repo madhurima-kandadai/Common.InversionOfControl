@@ -7,9 +7,16 @@ namespace Common.InversionOfControl.Autofac
     {
         private readonly ContainerBuilder _containerBuilder;
 
+        private static IContainer _container;
+
         public AutofacContainerBuilder()
         {
             _containerBuilder = new ContainerBuilder();
+        }
+
+        public ContainerBuilder GetAutofaContainerBuilder()
+        {
+            return _containerBuilder;
         }
 
         public IDisposableContainer Build()
@@ -19,7 +26,8 @@ namespace Common.InversionOfControl.Autofac
 
         public IContainer BuildContainer()
         {
-            return _containerBuilder.Build();
+            _container = _containerBuilder.Build();
+            return _container;
         }
 
         public IContainerBuilder RegisterSingleton<T>(T instance) where T : class
@@ -168,7 +176,7 @@ namespace Common.InversionOfControl.Autofac
 
         public T Resolve<T>() where T : class
         {
-            return _containerBuilder.Build().BeginLifetimeScope().Resolve<T>();
+            return _container.Resolve<T>();
         }
 
         public IContainerBuilder RegisterInstance<TInterface>(TInterface instance) where TInterface : class
@@ -180,7 +188,7 @@ namespace Common.InversionOfControl.Autofac
         public IContainerBuilder RegisterGeneric(Type t1, Type t2)
         {
             _containerBuilder.RegisterGeneric(t1).As(t2);
-            return this;            
+            return this;
         }
     }
 }
