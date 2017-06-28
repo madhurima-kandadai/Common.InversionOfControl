@@ -7,8 +7,8 @@
     <ProjectGuid>{2015EE39-59A9-4A0B-83B1-DBF9FBC4B1F4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Common.InversionOfControl.Unity3</RootNamespace>
-    <AssemblyName>Common.InversionOfControl.Unity3</AssemblyName>
+    <RootNamespace>Common.InversionOfControl.Unity</RootNamespace>
+    <AssemblyName>Common.InversionOfControl.Unity</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
