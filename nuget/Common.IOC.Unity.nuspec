@@ -14,6 +14,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="..\Common.InversionOfControl.Unity3\bin\Debug\Common.InversionOfControl.Unity3.dll" target="lib\net452"/>
+    <file src="..\Common.InversionOfControl.Unity3\bin\Debug\Common.InversionOfControl.Unity.dll" target="lib\net452"/>
   </files>
 </package>

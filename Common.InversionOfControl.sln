@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.InversionOfControl.A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.InversionOfControl.Ninject", "Common.InversionOfControl.Ninject\Common.InversionOfControl.Ninject.csproj", "{679E3926-E033-43A8-9F91-F1C84CE934C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.InversionOfControl.Unity3", "Common.InversionOfControl.Unity3\Common.InversionOfControl.Unity3.csproj", "{2015EE39-59A9-4A0B-83B1-DBF9FBC4B1F4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.InversionOfControl.Unity", "Common.InversionOfControl.Unity3\Common.InversionOfControl.Unity.csproj", "{2015EE39-59A9-4A0B-83B1-DBF9FBC4B1F4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.InversionOfControl.CastleWindsor", "Common.InversionOfControl.CastleWindsor\Common.InversionOfControl.CastleWindsor.csproj", "{EB1C6DC5-9E87-425B-93F4-A4088BDF82D7}"
 EndProject

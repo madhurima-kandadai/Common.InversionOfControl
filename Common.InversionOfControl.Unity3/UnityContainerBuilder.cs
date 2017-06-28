@@ -2,7 +2,7 @@
 using Microsoft.Practices.Unity;
 using Microsoft.Practices.Unity.ObjectBuilder;
 
-namespace Common.InversionOfControl.Unity3
+namespace Common.InversionOfControl.Unity
 {
     public class UnityContainerBuilder : IContainerBuilder
     {
