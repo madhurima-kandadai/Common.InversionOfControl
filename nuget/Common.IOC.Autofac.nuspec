@@ -14,6 +14,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="..\Common.InversionOfControl.Autofac\bin\Debug\Common.InversionOfControl.Autofac.dll" target="lib\net452"/>
+    <file src="..\Common.InversionOfControl.Autofac\bin\Debug\*.dll" target="lib\net452"/>
   </files>
 </package>

@@ -14,6 +14,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="..\Common.InversionOfControl.CastleWindsor\bin\Debug\Common.InversionOfControl.CastleWindsor.dll" target="lib\net452"/>    
+    <file src="..\Common.InversionOfControl.CastleWindsor\bin\Debug\*.dll" target="lib\net452"/>    
   </files>
 </package>
